@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #button{
+                position: fixed;
+                width: 40px;
+                height: 40px;
+                background: #f44242;
+                color: white;
+                border-radius: 100%;
+                bottom: 20px;
+                right: 20px;
+            }
+            #button #icons{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+            #button #icons::before,#button #icons::after{
+                content: " ";
+                width: 20px;
+                height: 3px;
+                background: #fff;
+                position: absolute;
+                left: 10px;
+                transform-origin: 25%;
+                transition: transform 0.3s ease-in-out;
+            }
+            #button #icons::before{
+                top: 15px;
+            }
+            #button #icons::after{
+                bottom: 15px;
+            }
+            #button input{
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                opacity: 0;
+                position: relative;
+                z-index: 3;
+            }
+            #button input:checked + #icons::before{
+                transform: translate(1.5px,0) rotate(45deg);
+            }
+            #button input:checked + #icons::after{
+                transform: translate(1.5px,0) rotate(-45deg);
+            }
+            #button #icons div{
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+                position: absolute;
+                top: 2.5px;
+                right: 2.5px;
+                transition: transform 0.2s linear,visibility 0.1s linear;
+                transition-delay: 0.1s;
+                visibility: hidden;
+            }
+            #button #icons #icon1{
+                background: #c242f4;
+            }
+            #button #icons #icon2{
+                background: #4441f4;
+            }
+            #button #icons #icon3{
+                background: #63228e;
+            }
+            #button input:checked + #icons div{
+                visibility: visible;
+            }
+            #button input:checked + #icons #icon1{
+                transform: translate(2.5px,-52.5px);
+            }
+            #button input:checked + #icons #icon2{
+                transform: translate(-40px,-37.5px);
+            }
+            #button input:checked + #icons #icon3{
+                transform: translate(-52.5px,5px);
+            }
+            .textCenter{
+                position: relative;
+                float: left;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <div id="button">
+            <input type="checkbox"/>
+            <div id="icons">
+                <div id="icon1">
+                    <span class="textCenter">1</span>
+                </div>
+                <div id="icon2">
+                    <span class="textCenter">2</span>
+                </div>
+                <div id="icon3">
+                    <span class="textCenter">3</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
