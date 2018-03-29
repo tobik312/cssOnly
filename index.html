@@ -90,62 +90,6 @@
                 transform: translate(-50%, -50%);
             }
         </style>
-        <style>
-            #gallery{
-                box-sizing: border-box;
-                width: 500px;
-                height: 500px;
-                background: #212;
-                text-align: center;
-                transform: scaleY(-1);
-            }
-            #gallery input[type=radio]::before{
-                z-index: 1;
-                width: 100%;
-                height: 100%;
-                border-radius: 100%;
-                background: #fff;
-                content: " ";
-                position: absolute;
-            }
-            #gallery input[type=radio]:checked::before{
-                background: #0d4;
-            }
-            #gallery input[type=radio]{
-                width: 16px;
-                height: 16px;
-                position: relative;
-            }
-            #gallery #images{
-                margin: 15px 25px;
-                width: 450px;
-                height: 450px;
-                overflow: hidden;
-            }
-            #gallery #images #scrollHandler{
-                width: 1800px;
-                height: 100%;
-                transition: transform 0.2s;
-            }
-            #gallery #images #scrollHandler img{
-                float: left;
-                width: 450px;
-                height: 100%;
-                transform: scaleY(-1);
-            }
-            #image1:checked~#images #scrollHandler{
-                transform: translateX(0px);
-            }
-            #image2:checked~#images #scrollHandler{
-                transform: translateX(-450px);
-            }
-            #image3:checked~#images #scrollHandler{
-                transform: translateX(-900px);
-            }
-            #image4:checked~#images #scrollHandler{
-                transform: translateX(-1350px);
-            }
-        </style>
     </head>
     <body>
         <div id="button">
@@ -161,21 +105,6 @@
                     <span class="textCenter">3</span>
                 </div>
             </div>
-        </div>
-        <!----->
-        <div id="gallery">
-           <input type="radio" id="image1" name="gallery" checked="checked"/>
-           <input type="radio" id="image2" name="gallery"/>
-           <input type="radio" id="image3" name="gallery"/>
-           <input type="radio" id="image4" name="gallery"/>
-           <div id="images">
-              <div id="scrollHandler">
-                   <img src="images/1.jpg"/>
-                   <img src="images/2.jpg"/>
-                   <img src="images/3.jpg"/>
-                   <img src="images/4.jpg"/>
-               </div>
-           </div>
         </div>
     </body>
 </html>
